@@ -2,26 +2,26 @@ import { useState } from 'react';
 
 // 给耗时任务添加loading状态
 
-export function useLoading(task) {
+export function useLoading(task: Function): [boolean, Function] {
   if (!(task instanceof Function)) {
     // 传入的不是函数
     throw new Error('the task you applied is not a function, please check!');
   }
   // 记录任务状态
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
   // 包装之后的任务
-  const wrappedTask = (...rest) => {
+  const wrappedTask = (...rest: any) => {
     setLoading(true);
     const funcRet = task.call(this, ...rest);
     // 传入的是Promise类型函数
     if (funcRet instanceof Promise) {
       return new Promise((resolve, reject) => {
         funcRet
-          .then(ret => {
+          .then((ret) => {
             setLoading(false);
             resolve(ret);
           })
-          .catch(err => {
+          .catch((err) => {
             setLoading(false);
             reject(err);
           });

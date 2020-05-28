@@ -1,24 +1,30 @@
 {
-  "name": "@douxc/custome-hooks",
+  "name": "@douxc/hooks",
   "version": "0.0.1",
-  "description": "custome hooks used by myself",
-  "main": "hooks.js",
+  "description": "hooks used by myself",
+  "main": "hooks.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/douxc/custome-hooks.git"
+    "url": "git+https://github.com/douxc/hooks.git"
   },
   "keywords": [
     "react",
-    "hooks",
-    "custome-hooks"
+    "hooks"
   ],
   "author": "douxc",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/douxc/custome-hooks/issues"
+    "url": "https://github.com/douxc/hooks/issues"
   },
-  "homepage": "https://github.com/douxc/custome-hooks#readme"
+  "homepage": "https://github.com/douxc/hooks#readme",
+  "dependencies": {
+    "react": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.35",
+    "typescript": "^3.9.3"
+  }
 }
